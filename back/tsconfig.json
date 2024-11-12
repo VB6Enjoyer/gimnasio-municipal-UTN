@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main.js"
+  }
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
@@ -17,9 +21,5 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "scripts": {
-    "build": "nest build",
-    "start": "node dist/main.js"
-  }
   }
 }
