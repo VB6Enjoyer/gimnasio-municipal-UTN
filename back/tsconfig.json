@@ -1,8 +1,4 @@
 {
-  "scripts": {
-    "build": "npm run build",
-    "start": "nest start run"
-  }
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
