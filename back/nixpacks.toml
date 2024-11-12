@@ -1,0 +1,8 @@
+[phases]
+setup = "nix-env -iA nixpkgs.nodejs-18_x"
+
+[build]
+cmd = "npm ci && npm run build"
+
+[start]
+cmd = "npm run start"
