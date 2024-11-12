@@ -1,0 +1,121 @@
+/* Base styling for full-page view */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    /* Darker background for a more polished look */
+    color: #e0e0e0;
+    /* Light gray text for better readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* This ensures the content is centered vertically */
+    flex-direction: column;
+    /* Center content vertically and horizontally */
+}
+
+/* Login container styling */
+.login-container {
+    background-color: #2a2a2a;
+    /* Slightly lighter background for the container */
+    border-radius: 12px;
+    /* Rounded corners for a smoother feel */
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    /* A more compact max-width */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+    /* Softer shadow for a more elegant look */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Login title */
+.login-container h2 {
+    font-size: 30px;
+    color: #ffb84d;
+    /* Softer gold for a more appealing look */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+/* Input field styling */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #444;
+    /* Adding subtle border for input fields */
+    border-radius: 8px;
+    /* More rounded corners for inputs */
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+/* Focused input field styles */
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    background-color: #444;
+    /* Slightly lighter background on focus */
+    border-color: #ffb84d;
+    /* Highlight border color */
+    outline: none;
+}
+
+/* Button styling */
+.login-container button {
+    background-color: #ffb84d;
+    /* Softer gold for buttons */
+    border: none;
+    color: #1a1a1a;
+    padding: 14px 20px;
+    /* Slightly bigger padding */
+    border-radius: 8px;
+    /* More rounded corners for buttons */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+    /* Slightly smaller text size for balance */
+}
+
+.login-container button:hover {
+    background-color: #e6a700;
+    /* Darker gold on hover */
+    transform: scale(1.05);
+    /* Button slightly enlarges on hover for a more dynamic effect */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 25px;
+        width: 85%;
+    }
+
+    .login-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        /* Reduce space below title */
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .login-container button {
+        padding: 12px 18px;
+    }
+}

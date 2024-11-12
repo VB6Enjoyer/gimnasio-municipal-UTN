@@ -1,0 +1,50 @@
+<div class="ejercicios-container">
+    <h2>Ejercicios</h2>
+
+    <input type="text" [(ngModel)]="busqueda" placeholder="Buscar ejercicio" />
+
+    <button (click)="crearEjercicio()">Crear nuevo ejercicio</button>
+
+    <div class="modal" *ngIf="isModalOpen">
+        <div class="modal-content">
+            <h3>{{ editing ? 'Modificar ejercicio' : 'Crear nuevo ejercicio' }}</h3>
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <div class="modal" *ngIf="isModalOpen">
+                    <div class="modal-content">
+                        <h3>{{ editing ? 'Modificar ejercicio' : 'Crear nuevo ejercicio' }}</h3>
+                        <form #form="ngForm" (ngSubmit)="onSubmit()">
+                            <label for="ejercicio">Ejercicio:</label>
+                            <input id="ejercicio" type="text" [(ngModel)]="ejercicioDto.ejercicio" name="ejercicio"
+                                required>
+
+                            <button type="submit">{{ editing ? 'Modificar' : 'Crear' }}</button>
+                            <button type="button" (click)="isModalOpen = false">Cerrar</button>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th (click)="ordenarEjercicios('ejercicio')"> Ejercicio<span *ngIf="sortColumn === 'ejercicio'">{{
+                        sortDirection ?
+                        '↑'
+                        : '↓' }}</span>
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ejercicio of filteredEjercicios">
+                <td class="ejercicio">{{ ejercicio.ejercicio }}</td>
+                <td>
+                    <button (click)="modificarEjercicio(ejercicio.idEjercicio)">Editar</button>
+                    <button (click)="eliminarEjercicio(ejercicio.idEjercicio)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

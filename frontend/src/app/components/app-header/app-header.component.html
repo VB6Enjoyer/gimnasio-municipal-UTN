@@ -1,0 +1,17 @@
+<header class="header">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a [routerLink]="['/home']" class="navbar-logo">{{ title }}</a>
+            <div class="menu-container" [class.active]="isNavbarOpen">
+                <ul class="navbar-menu">
+                    <li *ngFor="let item of navItems">
+                        <a [routerLink]="item.path" routerLinkActive="active">{{ item.label }}</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggle" (click)="toggleNavbar()">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>

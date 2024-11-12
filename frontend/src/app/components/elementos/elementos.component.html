@@ -1,0 +1,60 @@
+<div class="elementos-container">
+    <h2>Elementos</h2>
+
+    <input type="text" [(ngModel)]="busqueda" placeholder="Buscar elemento" />
+
+    <button (click)="crearElemento()">Crear nuevo elemento</button>
+
+    <div class="modal" *ngIf="isModalOpen">
+        <div class="modal-content">
+            <h3>{{ editing ? 'Modificar elemento' : 'Crear nuevo elemento' }}</h3>
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <label for="idTipoElemento">Tipo:</label>
+                <select id="idTipoElemento" [(ngModel)]="elementoDto.idTipoElemento" name="idTipoElemento" required>
+                    <option *ngFor="let tipoElemento of tipoElementos" [value]="tipoElemento.idTipoElemento">{{
+                        tipoElemento.nombre }}</option>
+                </select><br>
+
+                <label for="descripcion">Descripción:</label>
+                <input id="descripcion" type="text" [(ngModel)]="elementoDto.descripcion" name="descripcion" required>
+
+                <label for="cantidad">Cantidad:</label>
+                <input id="cantidad" type="number" [(ngModel)]="elementoDto.cantidad" name="cantidad" required><br>
+
+                <button type="submit">{{ editing ? 'Modificar' : 'Crear' }}</button>
+                <button type="button" (click)="isModalOpen = false">Cerrar</button>
+            </form>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th (click)="ordenarElementos('tipo')"> Tipo<span *ngIf="sortColumn === 'tipo'">{{ sortDirection ?
+                        '↑'
+                        : '↓' }}</span>
+                </th>
+                <th (click)="ordenarElementos('descripcion')">Descripción <span *ngIf="sortColumn === 'descripcion'">{{
+                        sortDirection ? '↑'
+                        : '↓' }}</span></th>
+                <th (click)="ordenarElementos('cantidad')">Cantidad <span *ngIf="sortColumn === 'cantidad'">{{
+                        sortDirection
+                        ?
+                        '↑' : '↓'
+                        }}</span></th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elemento of filteredElementos">
+                <td class="elementoTipo">{{ elemento.tipo }}</td>
+                <td class="elementoDescripcion">{{ elemento.descripcion }}</td>
+                <td class="elementoCantidad">{{ elemento.cantidad }}</td>
+                <td>
+                    <button (click)="modificarElemento(elemento.idElemento)">Editar</button>
+                    <button (click)="eliminarElemento(elemento.idElemento)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
