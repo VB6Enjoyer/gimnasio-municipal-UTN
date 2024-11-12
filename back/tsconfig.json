@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "build": "nest build",
-    "start": "node dist/main.js"
+    "build": "npm run build",
   }
   "compilerOptions": {
     "module": "commonjs",
