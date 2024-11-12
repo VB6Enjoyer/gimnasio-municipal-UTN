@@ -18,7 +18,8 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "scripts": {
-    "start": "nest start"
+    "build": "nest build",
+    "start": "node dist/main.js"
   }
   }
 }
