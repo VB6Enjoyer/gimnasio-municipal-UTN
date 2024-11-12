@@ -2,7 +2,7 @@
 nixpkgs = ["nodejs-18_x"]
 
 [phases.build]
-cmds = ["npm ci --omit=dev", "npm run build"]
+cmds = ["npm ci --omit=dev --no-cache", "npm run build"]
 
 [phases.start]
 cmd = "npm run start"
