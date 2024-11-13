@@ -12,7 +12,7 @@ import { RutinasModule } from './rutinas/rutinas.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      driver: 'mysql2'
+      driver: 'mysql2',
   host: process.env.DB_HOST,
   port: +process.env.DB_PORT,
   username: process.env.DB_USERNAME,
