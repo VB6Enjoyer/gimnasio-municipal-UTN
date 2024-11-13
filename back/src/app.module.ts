@@ -13,16 +13,6 @@ import { RutinasModule } from './rutinas/rutinas.module';
     TypeOrmModule.forRoot({
       type: 'sqlite',
   database: "libsql://gimnasio-vb6enjoyer.turso.io",
-        ssl: {
-    rejectUnauthorized: false,
-  },
-      extra: {
-    ssl: {
-      rejectUnauthorized: false,  // Ensure that the self-signed certificate is accepted
-    },
-        connectionLimit: 10,  // Example setting for connection pooling
-    charset: 'utf8mb4_unicode_ci',  // Set the charset if needed
-  },
       autoLoadEntities: true,
       synchronize: false,
       logger: 'advanced-console'
