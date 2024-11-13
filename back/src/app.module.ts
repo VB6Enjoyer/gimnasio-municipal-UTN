@@ -24,6 +24,11 @@ import { RutinasModule } from './rutinas/rutinas.module';
     ssl: {
       rejectUnauthorized: false,  // Ensure that the self-signed certificate is accepted
     },
+        connectionLimit: 10,  // Example setting for connection pooling
+    charset: 'utf8mb4_unicode_ci',  // Set the charset if needed
+    authPlugins: {
+      mysql_native_password: true,  // Explicitly use the native password plugin
+    },
   },
       autoLoadEntities: true,
       synchronize: false,
