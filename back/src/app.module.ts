@@ -11,13 +11,8 @@ import { RutinasModule } from './rutinas/rutinas.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      driver: 'mysql2',
-  host: process.env.DB_HOST,
-  port: +process.env.DB_PORT,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+      type: 'sqlite',
+  database: "libsql://gimnasio-vb6enjoyer.turso.io",
         ssl: {
     rejectUnauthorized: false,
   },
@@ -27,9 +22,6 @@ import { RutinasModule } from './rutinas/rutinas.module';
     },
         connectionLimit: 10,  // Example setting for connection pooling
     charset: 'utf8mb4_unicode_ci',  // Set the charset if needed
-    authPlugins: {
-      mysql_native_password: true,  // Explicitly use the native password plugin
-    },
   },
       autoLoadEntities: true,
       synchronize: false,
