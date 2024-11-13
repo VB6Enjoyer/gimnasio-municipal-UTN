@@ -1,5 +1,6 @@
 {
   "type": "mysql",
+  "driver": 'mysql2',
   "host": "gimnasiomunicipalutn-juaninun17-992b.d.aivencloud.com",
   "port": 12781,
   "username": "avnadmin",
