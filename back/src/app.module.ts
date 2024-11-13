@@ -12,11 +12,14 @@ import { RutinasModule } from './rutinas/rutinas.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'username',
-      password: 'password',
-      database: 'gimnasio',
+  host: process.env.DB_HOST,
+  port: +process.env.DB_PORT,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+        ssl: {
+    rejectUnauthorized: true,
+  },
       autoLoadEntities: true,
       synchronize: false,
       logger: 'advanced-console'
