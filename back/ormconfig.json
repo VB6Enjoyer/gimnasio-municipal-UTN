@@ -1,11 +1,6 @@
 {
-  "type": "mysql",
-  "driver": "mysql2",
-  "host": "gimnasiomunicipalutn-juaninun17-992b.d.aivencloud.com",
-  "port": 12781,
-  "username": "avnadmin",
-  "password": "AVNS_6nW40muoqzQvlgNrVvX",
-  "database": "defaultdb",
+  "type": "mysqlite",
+  "database": "libsql://gimnasio-vb6enjoyer.turso.io",
   "ssl": true,
   "extra": {
     "ssl": {
