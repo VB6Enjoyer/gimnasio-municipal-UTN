@@ -30,3 +30,16 @@ EXPOSE 3000
 
 # Start the application
 CMD ["node", "dist/main.js"]
+
+# Use the official MySQL image as a base
+FROM mysql:8.0
+
+# Set environment variables for MySQL
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_DATABASE=mydatabase
+
+# Copy the SQL script into the appropriate folder
+COPY script.sql /docker-entrypoint-initdb.d/
+
+# Expose MySQL port (optional, for external connections)
+EXPOSE 3306
