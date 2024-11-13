@@ -18,7 +18,12 @@ import { RutinasModule } from './rutinas/rutinas.module';
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
         ssl: {
-    rejectUnauthorized: true,
+    rejectUnauthorized: false,
+  },
+      extra: {
+    ssl: {
+      rejectUnauthorized: false,  // Ensure that the self-signed certificate is accepted
+    },
   },
       autoLoadEntities: true,
       synchronize: false,
