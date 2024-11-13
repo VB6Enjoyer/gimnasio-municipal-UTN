@@ -11,8 +11,12 @@ import { RutinasModule } from './rutinas/rutinas.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-  database: "libsql://gimnasio-vb6enjoyer.turso.io",
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'username',
+      password: 'password',
+      database: 'gimnasio',
       autoLoadEntities: true,
       synchronize: false,
       logger: 'advanced-console'
